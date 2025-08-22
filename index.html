@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharechat - Connect & Share</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="profile-pic">
+                    <img src="https://via.placeholder.com/40x40/4CAF50/ffffff?text=U" alt="Profile" id="userProfilePic">
+                </div>
+                <div class="user-info">
+                    <h3 id="userName">Your Name</h3>
+                    <span class="status">Online</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn-icon" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="btn-icon" id="apiConfigBtn" title="API Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="btn-icon" id="menuBtn">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <div class="chat-area" id="chatArea">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="input-container">
+                <button class="btn-icon" id="attachBtn">
+                    <i class="fas fa-paperclip"></i>
+                </button>
+                <input type="text" id="messageInput" placeholder="Type a message..." maxlength="500">
+                <button class="btn-icon" id="emojiBtn">
+                    <i class="fas fa-smile"></i>
+                </button>
+                <button class="btn-send" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- User Profile Modal -->
+        <div class="modal" id="profileModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Edit Profile</h3>
+                    <button class="close-btn" id="closeModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="editName">Name:</label>
+                        <input type="text" id="editName" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="editStatus">Status:</label>
+                        <input type="text" id="editStatus" placeholder="Enter your status">
+                    </div>
+                    <button class="btn-primary" id="saveProfile">Save Changes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Configuration Modal -->
+        <div class="modal" id="apiModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Gemini API Configuration</h3>
+                    <button class="close-btn" id="closeApiModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="apiKey">Gemini API Key:</label>
+                        <input type="password" id="apiKey" placeholder="Enter your Gemini API key">
+                        <small class="help-text">Get your API key from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="aiPersonality">AI Personality:</label>
+                        <select id="aiPersonality">
+                            <option value="friendly">Friendly & Helpful</option>
+                            <option value="professional">Professional</option>
+                            <option value="creative">Creative & Fun</option>
+                            <option value="casual">Casual & Relaxed</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary" id="saveApiConfig">Save Configuration</button>
+                    <button class="btn-secondary" id="testApiConnection">Test Connection</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emoji Picker -->
+        <div class="emoji-picker" id="emojiPicker">
+            <div class="emoji-grid">
+                <span class="emoji" data-emoji="😀">😀</span>
+                <span class="emoji" data-emoji="😃">😃</span>
+                <span class="emoji" data-emoji="😄">😄</span>
+                <span class="emoji" data-emoji="😁">😁</span>
+                <span class="emoji" data-emoji="😆">😆</span>
+                <span class="emoji" data-emoji="😅">😅</span>
+                <span class="emoji" data-emoji="😂">😂</span>
+                <span class="emoji" data-emoji="🤣">🤣</span>
+                <span class="emoji" data-emoji="😊">😊</span>
+                <span class="emoji" data-emoji="😇">😇</span>
+                <span class="emoji" data-emoji="🙂">🙂</span>
+                <span class="emoji" data-emoji="🙃">🙃</span>
+                <span class="emoji" data-emoji="😉">😉</span>
+                <span class="emoji" data-emoji="😌">😌</span>
+                <span class="emoji" data-emoji="😍">😍</span>
+                <span class="emoji" data-emoji="🥰">🥰</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
